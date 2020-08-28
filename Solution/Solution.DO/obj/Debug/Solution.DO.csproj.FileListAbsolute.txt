@@ -1,0 +1,12 @@
+D:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\bin\Debug\Solution.DO.dll
+D:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\bin\Debug\Solution.DO.pdb
+D:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\obj\Debug\Solution.DO.csproj.CoreCompileInputs.cache
+D:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\obj\Debug\Solution.DO.dll
+D:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\obj\Debug\Solution.DO.pdb
+D:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\obj\Debug\Solution.DO.csprojAssemblyReference.cache
+F:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\bin\Debug\Solution.DO.dll
+F:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\bin\Debug\Solution.DO.pdb
+F:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\obj\Debug\Solution.DO.csprojAssemblyReference.cache
+F:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\obj\Debug\Solution.DO.csproj.CoreCompileInputs.cache
+F:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\obj\Debug\Solution.DO.dll
+F:\PROGRA5\ProyectofinalApi\Solution\Solution.DO\obj\Debug\Solution.DO.pdb

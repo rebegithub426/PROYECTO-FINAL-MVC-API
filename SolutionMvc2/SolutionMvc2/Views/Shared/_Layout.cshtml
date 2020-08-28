@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    @*//no quitar de aqui*@
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Dermopharmacy</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @*//a aqui*@
+    <link href=@Url.Content("/Content/css/bootstrap.css") rel="stylesheet" type="text/css" media="all" />
+    <link href=@Url.Content("/Content/css/style.css") rel="stylesheet" type="text/css" media="all" />
+    <link href=@Url.Content("/Content/css/menu.css") rel="stylesheet" type="text/css" media="all" /> <!-- menu style -->
+    <link href=@Url.Content("/Content/css/ken-burns.css") rel="stylesheet" type="text/css" media="all" /> <!-- banner slider -->
+    <link href=@Url.Content("/Content/css/animate.min.css" ) rel="stylesheet" type="text/css" media="all" />
+    <link href=@Url.Content("/Content/css/owl.carousel.css") rel="stylesheet" type="text/css" media="all"> <!-- carousel slider -->
+    <!-- //Custom Theme files -->
+    <!-- font-awesome icons -->
+    <link href=@Url.Content("/Content/css/font-awesome.css" ) rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src=@Url.Content("/Content/js/jquery-2.2.3.min.js")></script>
+    <!-- //js -->
+    <!-- web-fonts -->
+    <link href=@Url.Content("/Content/fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/fonts.googleapis.com/css?family=Lovers+Quarrel") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/fonts.googleapis.com/css?family=Offside") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/fonts.googleapis.com/css?family=Tangerine:400,700") rel="stylesheet" type="text/css">
+    <!-- web-fonts -->
+    <script src=@Url.Content("/Content/js/owl.carousel.js")></script>
+</head>
+<body>
+    @*no borrar de aqui*@
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Dermopharmacy", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>*@
+                    <li>@Html.ActionLink("Productos Disponibles", "ListaProductos", "Producto")</li>
+                    <li>@Html.ActionLink("Productos", "Index", "Productoes")</li>
+                    <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+                    <li>@Html.ActionLink("Categorias", "Index", "Categoría")</li>
+                    <li>@Html.ActionLink("Comentarios", "Index", "Comentarios")</li>
+
+
+                    @*<li class="dropdown head-dpdn">
+            <a href="Clientes" class="dropdown-toggle"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Clientes</a>
+        </li>*@
+                    @*<li class="dropdown head-dpdn">
+                        <a href="Categoría" class="dropdown-toggle"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Categorias</a>
+                    </li>
+
+                    <li class="dropdown head-dpdn">
+                        <a href="Comentarios" class="dropdown-toggle"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Comentarios</a>
+                    </li>*@
+
+
+
+                    @*<li class="dropdown head-dpdn">
+            <a href="FormaPagoes" class="dropdown-toggle"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Forma Pago</a>
+        </li>*@
+                    @*<li class="dropdown head-dpdn">
+            <a href="Calificación" class="dropdown-toggle"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Calificacion</a>
+        </li>*@
+
+                    @*<div runat="server" id="admin">
+            <li>@Html.ActionLink("Productos", "Index", "Productoes")</li>
+            <li class="dropdown head-dpdn">
+                <a href="Clientes" class="dropdown-toggle"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Clientes</a>
+            </li>
+            <li class="dropdown head-dpdn">
+                <a href="Categoría" class="dropdown-toggle"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Categorias</a>
+            </li>
+        </div>*@
+
+                </ul>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+
+            
+
+        </div>
+            
+       
+    </div>
+    @*a aqui*@
+<div class="container body-content">
+
+    <div class="header-two">
+        <!-- header-two -->
+        <div class="container">
+            <div class="header-logo">
+                <h1><a href="Home"><span>D</span>ermo <i></i></a></h1>
+                <h6>Su Lugar. Su Cuerpo.</h6>
+            </div>
+
+
+            <div class="clearfix"> </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    @RenderBody()
+    <hr />
+
+
+
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Dermopharmacy</p>
+    </footer>
+</div>
+
+
+
+
+
+
+
+    @*dejar los bundles*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿@model SolutionMvc2.Models.Factura
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Factura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subtotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subtotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor_Iva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor_Iva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor_Descuento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor_Descuento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Neto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Neto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Cédula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Cédula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormaPago.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormaPago.Tipo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Factura }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

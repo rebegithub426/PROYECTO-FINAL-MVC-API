@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SolutionMvc2.Models.DetalleFactura>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Detalles de la Factura</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor_Unitario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Factura.Id_Factura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producto.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor_Unitario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Factura.Id_Factura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producto.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_DetalleFactura }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_DetalleFactura }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_DetalleFactura })
+        </td>
+    </tr>
+}
+
+</table>

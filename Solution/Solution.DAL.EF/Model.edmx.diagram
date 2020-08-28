@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4dcf8e0cb3a341ec8c3b2f18f19d76f3" Name="Diagram1">
+        <EntityTypeShape EntityType="Tienda_DERMOModel.Calificación" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tienda_DERMOModel.Categoría" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tienda_DERMOModel.CategoriaProducto" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tienda_DERMOModel.Cliente" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tienda_DERMOModel.Comentario" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tienda_DERMOModel.DetalleFactura" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tienda_DERMOModel.Factura" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tienda_DERMOModel.Facturación" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tienda_DERMOModel.FormaPago" Width="1.5" PointX="1.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tienda_DERMOModel.Imagen" Width="1.5" PointX="3.375" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tienda_DERMOModel.Producto" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tienda_DERMOModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_Calificación_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_Calificación_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_CategoriaProducto_Categoría" ManuallyRouted="false" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_CategoriaProducto_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_Comentario_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_Factura_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_Comentario_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_DetalleFactura_Factura" ManuallyRouted="false" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_DetalleFactura_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_Factura_FormaPago" ManuallyRouted="false" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_Facturación_Factura" ManuallyRouted="false" />
+        <AssociationConnector Association="Tienda_DERMOModel.FK_Imagen_Producto" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SolutionMvc2.Models.Producto1>
+@{
+    ViewBag.Title = "ProductosCarrito";
+}
+
+<h2>Carrito de la compra</h2>
+
+@if (Session["PRODUCTOS"] == null)
+{
+    <h2 style="color:red">
+        No hay ningun producto en el carrito
+    </h2>
+}
+else
+{
+    <div align="center">
+        <dl class="row">
+            @foreach (var prod in Model)
+            {
+                <dt><img style="width:70px;height:70px" src="~/Content/images/@prod.Referencia" /></dt>
+                <dd>@prod.Nombre</dd>
+                <dd>@prod.Precio ₡</dd>
+                <dd>
+                    @Html.ActionLink("Eliminar del carrito"
+                    , "ProductosCarrito", "Producto"
+                    , new { id = prod.Id_Producto }, null)
+                </dd>
+
+            }
+        </dl>
+        <label>
+            SubTotal:
+        </label>
+        <label>@ViewBag.SubTotal</label>
+        <br />
+        <br />
+        <label>
+            IVA:
+        </label>
+        <label>@ViewBag.IVA</label>
+        <br />
+        <br />
+        <label>
+            Total a pagar:
+        </label>
+        <label>@ViewBag.Total</label>
+        <br />
+        <br />
+
+
+        @Html.ActionLink("Comprar", "FacturaProductos", "Producto", null, new { @class = "btn btn-primary", onclick = "return confirm('Esta seguro de realizar esta compra?');" })
+
+    </div>
+    <script>
+
+    </script>
+    <br />
+}
+
+
+
+@Html.ActionLink("Volver a los productos", "ListaProductos", "Producto")

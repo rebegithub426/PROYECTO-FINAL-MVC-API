@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SolutionMvc2.Models.Producto1>
+
+
+@{
+    ViewBag.Title = "FacturaProductos";
+}
+
+<h2>Factura de los Productos</h2>
+
+@if (Session["PRODUCTOS"] == null)
+{
+    <h2 style="color:red">
+        Factura de sus productos
+    </h2>
+}
+else
+{
+<div align="center">
+    <dl class="row">
+        @foreach (var prod in Model)
+        {
+
+            <dd>@prod.Nombre</dd>
+            <dd>@prod.Precio ₡</dd>
+            <br />
+        }
+    </dl>
+    <label>
+        SubTotal:
+    </label>
+    <label>@ViewBag.SubTotal</label>
+    <br />
+    <br />
+    <label>
+        IVA:
+    </label>
+    <label>@ViewBag.IVA</label>
+    <br />
+    <br />
+    <label>
+        Total a pagar:
+    </label>
+    <label>@ViewBag.Total</label>
+
+    <br />
+    <br />
+
+    @Html.ActionLink("Comprar", "FacturaProductos", "Producto", null, new { @class = "btn btn-primary", onclick = "return confirm('Realizó su compra con éxito);" })
+</div>
+    <script>
+
+    </script>
+    <br />
+    }
+
+
+
+

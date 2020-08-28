@@ -1,0 +1,794 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <title>@Page.Title</title>
+  
+
+    <title>DermaPharmacy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Smart Bazaar Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href=@Url.Content("/Content/css/bootstrap.css") rel="stylesheet" type="text/css" media="all" />
+    <link href=@Url.Content("/Content/css/style.css") rel="stylesheet" type="text/css" media="all" />
+    <link href=@Url.Content("/Content/css/menu.css") rel="stylesheet" type="text/css" media="all" /> <!-- menu style -->
+    <link href=@Url.Content("/Content/css/ken-burns.css") rel="stylesheet" type="text/css" media="all" /> <!-- banner slider -->
+    <link href=@Url.Content("/Content/css/animate.min.css" ) rel="stylesheet" type="text/css" media="all" />
+    <link href=@Url.Content("/Content/css/owl.carousel.css") rel="stylesheet" type="text/css" media="all"> <!-- carousel slider -->
+    <!-- //Custom Theme files -->
+    <!-- font-awesome icons -->
+    <link href=@Url.Content("/Content/css/font-awesome.css" ) rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src=@Url.Content("/Content/js/jquery-2.2.3.min.js")></script>
+    <!-- //js -->
+    <!-- web-fonts -->
+    <link href=@Url.Content("/Content/fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/fonts.googleapis.com/css?family=Lovers+Quarrel") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/fonts.googleapis.com/css?family=Offside") rel="stylesheet" type="text/css">
+    <link href=@Url.Content("/Content/fonts.googleapis.com/css?family=Tangerine:400,700") rel="stylesheet" type="text/css">
+    <!-- web-fonts -->
+    <script src=@Url.Content("/Content/js/owl.carousel.js")></script>
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+                items: 4,
+                itemsDesktop: [640, 5],
+                itemsDesktopSmall: [480, 2],
+                navigation: true
+
+            });
+        });
+    </script>
+    <script src=@Url.Content("/Content/js/jquery-scrolltofixed-min.js") type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+
+            // Dock the header to the top of the window when scrolled past the banner. This is the default behaviour.
+
+            $('.header-two').scrollToFixed();
+            // previous summary up the page.
+
+            var summaries = $('.summary');
+            summaries.each(function (i) {
+                var summary = $(summaries[i]);
+                var next = summaries[i + 1];
+
+                summary.scrollToFixed({
+                    marginTop: $('.header-two').outerHeight(true) + 10,
+                    zIndex: 999
+                });
+            });
+        });
+    </script>
+    <!-- start-smooth-scrolling -->
+    <script type=@Url.Content("/Content/text/javascript") src=@Url.Content("js/move-top.js")></script>
+    <script type=@Url.Content("/Content/text/javascript") src=@Url.Content("js/easing.js")></script>
+    <script type=@Url.Content("/Content/text/javascript")>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script type=@Url.Content("/Content/text/javascript")>
+        $(document).ready(function () {
+
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <script src=@Url.Content("/Content/js/bootstrap.js")></script>
+</head>
+<body>
+
+    <script>
+        $('#myModal88').modal('show');
+    </script>
+    <!-- header -->
+    <div class="header">
+        <div class="w3ls-header">
+            <!--header-one-->
+
+
+            <div class="clearfix"> </div>
+        </div>
+        <div class="header-two">
+            <!-- header-two -->
+            <div class="container">
+
+
+
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div><!-- //header-two -->
+    <div class="header-three">
+        <!-- header-three -->
+        <div class="container">
+            <div class="menu">
+                <div class="cd-dropdown-wrapper">
+                    @*<a class="cd-dropdown-trigger" href="#0">Bienvenido a Nuestra Tienda Virtual</a>*@
+                    <nav class="cd-dropdown">
+                        <a href="#0" class="cd-close">Cerrar</a>
+                        <ul class="cd-dropdown-content">
+
+                            <li class="has-children">
+                                <a href="#">Productos</a>
+                                <ul class="cd-secondary-dropdown is-hidden">
+                                    <li class="go-back"><a href="#">Menu</a></li>
+                                    <li class="see-all"><a href="products7.html">All Products</a></li>
+
+
+
+                                </ul> <!-- .cd-secondary-dropdown -->
+                            </li> <!-- .has-children -->
+
+
+                            <li class="has-children">
+                                <a href="#">Health, Beauty & Pharmacy</a>
+                                <ul class="cd-secondary-dropdown is-hidden">
+                                    <li class="go-back"><a href="#">Menu</a></li>
+                                    <li class="see-all"><a href="products7.html">All Products</a></li>
+
+                                    <li class="has-children">
+                                        <a href="#">Pharmacy </a>
+                                        <ul class="is-hidden">
+                                            <li class="go-back"><a href="#"></a></li>
+                                            <li><a href="products7.html">Home Delivery </a></li>
+                                            <li><a href="products7.html">History & Reports </a></li>
+                                            <li><a href="products7.html">Transfer Prescriptions </a></li>
+                                            <li><a href="products7.html">Health CheckUp</a></li>
+                                            <li><a href="products7.html">Mobile App</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-children">
+                                        <a href="#">Pharmacy Center </a>
+                                        <ul class="is-hidden">
+                                            <li class="go-back"><a href="#"></a></li>
+                                            <li><a href="products7.html">Diabetes Shop </a></li>
+                                            <li><a href="products7.html">Medicine Cabinet </a></li>
+                                            <li><a href="products7.html">Vitamin Selector</a></li>
+                                            <li><a href="products7.html">Pharmacy Help</a></li>
+                                        </ul>
+                                    </li>
+                                </ul><!-- .cd-secondary-dropdown -->
+                            </li>
+
+
+
+
+                        </ul> <!-- .cd-dropdown-content -->
+                    </nav> <!-- .cd-dropdown -->
+                </div> <!-- .cd-dropdown-wrapper -->
+            </div>
+            <div class="move-text">
+
+                <script type="text/javascript" src="js/jquery.marquee.min.js"></script>
+                <script>
+                    $('.marquee').marquee({ pauseOnHover: true });
+
+                </script>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- //header -->
+    <!-- banner -->
+    <div class="banner">
+        <div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
+            <!-- Wrapper-for-Slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <!-- First-Slide -->
+                    <img src="~/Content/images/d1.png" alt="" class="img-responsive" width="600" height="600"/>
+                    <div class="carousel-caption kb_caption kb_caption_right">
+                        <h3 data-animation="animated flipInX">Hoy <span>50%</span> Descuento</h3>
+                        <h4 data-animation="animated flipInX">Solo Por Hoy</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Second-Slide -->
+                    <img src="~/Content/images/d2.png" alt="" class="img-responsive" />
+                    <div class="carousel-caption kb_caption kb_caption_right">
+                        <h3 data-animation="animated fadeInDown">Últimos Productos</h3>
+                        <h4 data-animation="animated fadeInUp">Aproveche</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Third-Slide -->
+                    <img src="~/Content/images/d3.png" alt="" class="img-responsive" />
+                    <div class="carousel-caption kb_caption kb_caption_center">
+                        <h3 data-animation="animated fadeInLeft">OFERTA Cuida Tu Cuerpo </h3>
+                        <h4 data-animation="animated flipInX">Cuida Tu Cuerpo</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Left-Button -->
+            <a class="left carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
+                <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <!-- Right-Button -->
+            <a class="right carousel-control kb_control_right" href="#kb" role="button" data-slide="next">
+                <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+        <script src="js/custom.js"></script>
+    </div>
+    <!-- //banner -->
+    <!-- welcome -->
+
+
+
+    <div class="welcome">
+        <div class="container">
+            <div class="welcome-info">
+                <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                    <ul id="myTab" class=" nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#home" id="home-tab" role="tab" data-toggle="tab">
+                                
+                                
+                            </a>
+                        </li>
+                        @*<li role="presentation">
+                                <a href="#carl" role="tab" id="carl-tab" data-toggle="tab">
+                                    <i class="fa fa-female" aria-hidden="true"></i>
+                                    <h5>Cuerpo</h5>
+                                </a>
+                            </li>*@
+
+
+                    </ul>
+                    <div class="clearfix" align="center"> </div>
+                    <h3 class="w3ls-title">Catálogo de Nuestros Productos</h3>
+                    <div id="myTabContent" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                            <div class="tabcontent-grids">
+                                <div id="owl-demo" class="owl-carousel">
+                                    <div class="item">
+                                        <div class="glry-w3agile-grids agileits">
+                                            <a href="products.html"><img src="~/Content/images/d1.png" alt="img"></a>
+                                            <div class="view-caption agileits-w3layouts">
+                                                <h4><a href="products.html">PhotoBlock Gel</a></h4>
+                                                <p>Bloquedor Solar</p>
+                                                <h5>₡10000</h5>
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart" />
+                                                    <input type="hidden" name="add" value="1" />
+                                                    <input type="hidden" name="w3ls_item" value="PhotoBlock Gel" />
+                                                    <input type="hidden" name="amount" value="₡1000" />
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="glry-w3agile-grids agileits">
+                                            <div class="new-tag"><h6>Sale</h6></div>
+                                            <a href="products.html"><img src="~/Content/images/d2.png" alt="img"></a>
+                                            <div class="view-caption agileits-w3layouts">
+                                                <h4><a href="products.html">Aquax Whitening</a></h4>
+                                                <p>Crema Aclaradora</p>
+                                                <h5>₡30000</h5>
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart" />
+                                                    <input type="hidden" name="add" value="1" />
+                                                    <input type="hidden" name="w3ls_item" value="Aquax Whitening" />
+                                                    <input type="hidden" name="amount" value="₡30000" />
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="glry-w3agile-grids agileits">
+                                            <div class="new-tag"><h6>New</h6></div>
+                                            <a href="products.html"><img src="~/Content/images/d3.png" alt="img"></a>
+                                            <div class="view-caption agileits-w3layouts">
+                                                <h4><a href="products.html">Lip Plumper</a></h4>
+                                                <p>Rejuvenecedor</p>
+                                                <h5>₡5000</h5>
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart" />
+                                                    <input type="hidden" name="add" value="1" />
+                                                    <input type="hidden" name="w3ls_item" value="Lip Plumper" />
+                                                    <input type="hidden" name="amount" value="₡5000" />
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="glry-w3agile-grids agileits">
+                                            <a href="products.html"><img src="~/Content/images/d4.png" alt="img"></a>
+                                            <div class="view-caption agileits-w3layouts">
+                                                <h4><a href="products.html">Under Eyes Gel</a></h4>
+                                                <p>Aclarador</p>
+                                                <h5>₡5800</h5>
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart" />
+                                                    <input type="hidden" name="add" value="1" />
+                                                    <input type="hidden" name="w3ls_item" value="Under Eyes Gel" />
+                                                    <input type="hidden" name="amount" value="₡5800" />
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="glry-w3agile-grids agileits">
+                                            <a href="products.html"><img src="~/Content/images/d5.png" alt="img"></a>
+                                            <div class="view-caption agileits-w3layouts">
+                                                <h4><a href="products.html">Revannese</a></h4>
+                                                <p>Acido</p>
+                                                <h5>₡8400</h5>
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart" />
+                                                    <input type="hidden" name="add" value="1" />
+                                                    <input type="hidden" name="w3ls_item" value="Revannese" />
+                                                    <input type="hidden" name="amount" value="₡8400" />
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="glry-w3agile-grids agileits">
+                                            <div class="new-tag"><h6>Sale</h6></div>
+                                            <a href="products.html"><img src="~/Content/images/d6.png" alt="img"></a>
+                                            <div class="view-caption agileits-w3layouts">
+                                                <h4><a href="products.html">Revise Pure</a></h4>
+                                                <p>Crema</p>
+                                                <h5>₡3500</h5>
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart" />
+                                                    <input type="hidden" name="add" value="1" />
+                                                    <input type="hidden" name="w3ls_item" value="Revise Pure" />
+                                                    <input type="hidden" name="amount" value="₡3500" />
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="glry-w3agile-grids agileits">
+                                            <div class="new-tag"><h6>New</h6></div>
+                                            <a href="products.html"><img src="~/Content/images/d7.png" alt="img"></a>
+                                            <div class="view-caption agileits-w3layouts">
+                                                <h4><a href="products.html">Derma</a></h4>
+                                                <p>Antiarrugas Parpados</p>
+                                                <h5>₡14000</h5>
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart" />
+                                                    <input type="hidden" name="add" value="1" />
+                                                    <input type="hidden" name="w3ls_item" value="Derma" />
+                                                    <input type="hidden" name="amount" value="₡14000" />
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="glry-w3agile-grids agileits">
+                                            <a href="products.html"><img src="~/Content/images/d8.png" alt="img"></a>
+                                            <div class="view-caption agileits-w3layouts">
+                                                <h4><a href="products.html">Anti Wrinkles</a></h4>
+                                                <p>Anti Arrugas</p>
+                                                <h5>₡25000</h5>
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart" />
+                                                    <input type="hidden" name="add" value="1" />
+                                                    <input type="hidden" name="w3ls_item" value="Anti Wrinkles" />
+                                                    <input type="hidden" name="amount" value="₡25000" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="glry-w3agile-grids agileits">
+                                            <a href="products.html"><img src="~/Content/images/d9.png" alt="img"></a>
+                                            <div class="view-caption agileits-w3layouts">
+                                                <h4><a href="products.html">Labial Labios</a></h4>
+                                                <p>Hidratante</p>
+                                                <h5>₡7000</h5>
+                                                <form action="#" method="post">
+                                                    <input type="hidden" name="cmd" value="_cart" />
+                                                    <input type="hidden" name="add" value="1" />
+                                                    <input type="hidden" name="w3ls_item" value="Labial Labios" />
+                                                    <input type="hidden" name="amount" value="₡7000" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="carl" aria-labelledby="carl-tab">
+                            <div class="tabcontent-grids">
+                                <script>
+                                    $(document).ready(function () {
+                                        $("#owl-demo1").owlCarousel({
+
+                                            autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                                            items: 4,
+                                            itemsDesktop: [640, 5],
+                                            itemsDesktopSmall: [414, 4],
+                                            navigation: true
+
+                                        });
+
+                                    });
+                                </script>
+                                <div id="owl-demo1" class="owl-carousel">
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="james" aria-labelledby="james-tab">
+                            <div class="tabcontent-grids">
+                                <script>
+                                    $(document).ready(function () {
+                                        $("#owl-demo2").owlCarousel({
+
+                                            autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                                            items: 4,
+                                            itemsDesktop: [640, 5],
+                                            itemsDesktopSmall: [414, 4],
+                                            navigation: true
+
+                                        });
+
+                                    });
+                                </script>
+                                <div id="owl-demo2" class="owl-carousel">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="decor" aria-labelledby="decor-tab">
+                            <div class="tabcontent-grids">
+                                <script>
+                                    $(document).ready(function () {
+                                        $("#owl-demo3").owlCarousel({
+
+                                            autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                                            items: 4,
+                                            itemsDesktop: [640, 5],
+                                            itemsDesktopSmall: [414, 4],
+                                            navigation: true
+
+                                        });
+
+                                    });
+                                </script>
+                                <div id="owl-demo3" class="owl-carousel">
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="sports" aria-labelledby="sports-tab">
+                            <div class="tabcontent-grids">
+                                <script>
+                                    $(document).ready(function () {
+                                        $("#owl-demo4").owlCarousel({
+
+                                            autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                                            items: 4,
+                                            itemsDesktop: [640, 5],
+                                            itemsDesktopSmall: [414, 4],
+                                            navigation: true
+
+                                        });
+                                    });
+                                </script>
+                                <div id="owl-demo4" class="owl-carousel">
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //welcome -->
+    <!-- add-products -->
+    
+
+    <div align="center">
+        <img src="~/Content/images/d8.png">
+        <h2>Derma Anti Wrinckles Cream, Crema Antiarrugas. 30 gr</h2>
+        <p>Combinación de cuatro moléculas activas que:</p>
+        <li>Mantienen la piel saludable y joven por más tiempo (Ronacare®-AP)</li>
+        <li>Estimula la síntesis de colágeno y GAG (Biopeptide®CL-3%)</li>
+        <li>Refuerza la epidermis e hidrata (Ác.Hialurónico Micronizado)</li>
+        <li>Disminuye las arrugas (Retinol-A 0.3%)</li>
+        <h4>
+            RONACARE-AP (Bis-Ethylhexyl Hydroxy dimethoxy benzil malonate.)</h3>
+            <p>Es una novedosa molécula con avanzadas propiedades antioxidantes, con alta tecnología de foto protección (UVA).</p>
+            <h4>Biopéptidos</h4>
+            <p>Estimula síntesis de colágeno y GAG (Glicosaminoglicanos)</p>
+            <p>Contribuye en la formación de macro moléculas, complejas proteínas, prostaglandinas y hormonas, dando firmeza a la piel</p>
+            <p>Contribuye a la correcta función celular, fortalece las defensas de la piel y previene la aparición de signos visibles del envejecimiento.</p>
+            <p>Estimulan los fibroblastos para producir componentes claves en la matriz extracelular tal como el colágeno y ac. Hialurónico.</p>
+            <h4>Retinol Palmitato (Derivado De La Vitamina A)</h4>
+
+            <br>
+            <img src="~/Content/images/d2.png">
+            <h2>Derma Aquax Whitening (Crema Aclaradora de Manchas). 50 grs</h2>
+            <li>Con β –WHITE, último descubrimiento para despigmentación,  con efecto global sobre síntesis de melanina.</li>
+            <li>RONACARE, potente antioxidante- antienvejecimiento, foto protector UVA</li>
+            <li>Resultado temprano, significativo y seguro a largo plazo</li>
+            <li>Indicado para disminuir las manchas oscuras y pigmentaciones por exposición solar, acné, melasma. Unifica el color de la piel</li>
+            <li>Incorpora una base humectante que dará al paciente una sensación de piel más suave y flexible, y el novedoso antioxidante antienvejecimiento RONACARE.</li>
+            <p>La pigmentación de la piel es el resultado de un complejo proceso de síntesis de melanina dentro del melanocito de la epidermis. Este proceso es llamado malanogénesis.</p>
+            <p>El regulador más importante de la síntesis de melanina in vivo es la radiación UV.</p>
+            <p>La enzima tirosinasa juega un papel clave en la biosíntesis de melanina.</p>
+            <p>La enzima tirosinasa juega un papel clave en la biosíntesis de melanina.</p>
+            <h4>β-White ™ ULTIMO DESCUBRIMIENTO PARA DESPIGMENTACIÓN</h4>
+            <p>Recientemente se describió el factor de crecimiento (TGF-β1) o β-White  y su papel en la melanogénesis con doble mecanismo de acción: </p>
+            <ul>1. Disminuye significativamente el contenido de melanina al reducir la actividad de las tirosinasas (TRP-1 y TRP-2)</ul>
+            <ul>2. Reduce la actividad de MITF, bloqueando la formación y desarrollo de los melanocitos.</ul>
+            <li>Sin los efectos secundarios y contraindicaciones de otros agentes blanqueadores tradicionales, y un excelente perfil de seguridad.</li>
+            <li>Reduce el contenido de dentricidad y melanosomas, y la producción de melanina con mayor actividad que la vitamina C y Arbutin.</li>
+            <li>In vivo, β-White ™ induce un efecto aclarante de la piel significativo y progresivo en las zonas faciales  hiperpigmentadas.</li>
+            <p>Otra característica de β-White ™ es su Cápsula Lipídica especial que actúa en sinergia con el péptido y le da una acción directa sobre la penetración de la piel.</p>
+            <li>Se protege el péptido de la actividad proteolítica de la superficie de la piel, y contra la inactivación por parte de los componentes de la formulación.</li>
+            <li>Mejorar la penetración en la piel y efecto de liberación continua</li>
+            <br>
+            <img src="~/Content/images/d7.png">
+            <h2>Derma Photoblock Gel FPS 50. 75 grs</h2>
+            <p>Derma Photoblock gel contiene las moléculas de bloqueador solar más efectivas, con protección avanzada y completa de UVB y UVA, para todo tipo de piel incluso acnéica.</p>
+            <li>Barrera física:  TiO2 con alta estabilidad que protege principalmente contra UVB</li>
+            <li>Parsol 1789:  única barrera química de la FDA para cubrir toda la longitud de onda UVA </li>
+            <li>Ronacare AP: una molécula antioxidante única con alta estabilidad, poder antioxidante y fotoprotector UVA.</li>
+            <li>Brinda 24 horas de protección contra el envejecimiento prematuro de la piel, y  la protege del estrés oxidativo.</li>
+            <h4>Ronacare ® AP (Bis- Ethylhexil hidroxi dimetoxi bencilideno malonato- hdbm)</h4>
+            <li>Sustancia estable con un potencial antioxidante altamente controlado y efecto antienvejecimiento.</li>
+            <li>Tiene excelentes propiedades de absorción de UVA, que son los rayos más dañinos para la piel.</li>
+            <li>Potencializa la actividad antioxidante de los otros componentes de las formulaciones.</li>
+            <li>RonaCare® AP previene el envejecimiento prematuro de la piel de manera eficiente y continua durante más de 24 horas,empleando un mecanismo continuo de tres fases:</li>
+            <ul>El estrés oxidativo se atenúa</ul>
+            <ul>Potencializa la protección UV y previene la formación de especies reactivas en la piel.</ul>
+            <li>El exclusivo antioxidante  Ronacare-ap protege los lípidos de la superficie de la piel y el betacaroteno, manteniendo su humedad natural y protegiéndola del envejecimiento.</li>
+            <br>
+            <img src="~/Content/images/d4.png">
+            <h2>Derma Under Eyes (Gel Contorno de Ojos). 15 grs</h2>
+            <p>Estudio clínico: ocho semanas da como resultado una mejora de las ojeras en más del 70%.</p>
+            <li>Combinación de activos para reducir ojeras debajo de los ojos.</li>
+            <li>Eliminación de metabolitos hierro y bilirrubina acumulados en la zona, que  dan un tono azulado.</li>
+            <li>Profunda hidratación de los tejidos alrededor del ojo.</li>
+            <h4>Haloxyl® 2%: Último descubrimiento de alta tecnología</h4>
+            <p>Solubiliza el hierro acumulado para una fácil eliminación, con lo que reduce el oscurecimiento de las ojeras.</p>
+            <h4>Ácido hialurónico micronizado:</h4>
+            <p>Rejuvenece e intensifica la hidratación de la zona, mantiene unida la estructura de la piel (colágeno y elastina), colabora con la reparación de los tejidos.</p>
+            <h4>Péptidos:</h4>
+            <p>Aseguran la firmeza y volumen de esta delicada zona</p>
+            <h4>Causas de las ojeras:</h4>
+            <li>Dado que la piel es muy delgada es esta área, la circulación venosa contribuye al oscurecimiento</li>
+            <li>Factores hereditarios como la estructura ósea que forma cavidades en el rostro causando una apariencia mayor por la sombra creada</li>
+            <li>Alergias, asma, eczemas, cansancio, disturbios hepáticos, embarazo y menstruación</li>
+            <li>La histamina liberada da coloración a la zona, restregar los ojos intensifica la coloración</li>
+            <li>Los medicamentos que crean vasodilatación también intensifican el problema de ojeras</li>
+            <li>La deficiencia de hierro o anemia intensifica el color de la ojera por la baja cantidad de sangre oxigenada. Deficiencia de vitaminas</li>
+            <li>Envejecimiento: la pérdida de colágeno hace más delgada y transparente esta zona, y a menudo se asocia a bolsas bajo los ojos.</li>
+            <br>
+            <img src="~/Content/images/d3.png">
+            <h2>Derma Lip Plumper (Bálsamo Voluminizador de Labios). 15 grs</h2>
+            <h4>Propiedades:</h4>
+            <li>Realza la forma y el volumen de los labios</li>
+            <li>Realza la apariencia joven de los labios por tiempo prolongado</li>
+            <li>Disminuye las líneas finas en y alrededor  de los labios  y la caída de su relieve </li>
+            <li>Suaviza y define mejor los labios. </li>
+            <li>Efectivo, seguro, con aroma a strawberry  </li>
+            <li>Se recomienda utilizarlo directamente en los labios y alrededor de éstos dos veces al día. </li>
+            <h4>Volulip® 1%:</h4>
+            <h4>Palmitoyl tripeptide-38</h4>
+            <p>Es un péptido con acción matrix- mimética que regula la actividad celular, repara daños en los tejidos y remodela el colágeno, proporcionando volumen a los labios.</p>
+            <h4>Ácido hialurónico micronizado</h4>
+            <p>Rejuvenece e intensifica la hidratación de los labios, mantiene unida su matriz (colágeno y elastina), colabora con la reparación de los tejidos.</p>
+            <br>
+            <img src="~/Content/images/d15.png">
+            <h2>Mostal Loción Capilar Contra Caída del Cabello</h2>
+            <p>Mostal Loción Capilar contiene la sustancia natural Procianidina B2 que proviene de la manzana verde. Es un polifenol con efecto antioxidante y antiinflamatorio. </p>
+            <p>Mostal alarga la fase de crecimiento del pelo (anágena) y reduce la de reposo y caída (telágena) con lo que lo engrosa y hace crecer. </p>
+            <p>Es una loción antioxidante y antiinflamatoria que se aplica dos veces al día y los resultados se obtienen entre 4 y 6 meses, luego se puede usar una vez al día. </p>
+            <p>Al mes de usarlo aproximadamente se disminuye la caída excesiva de cabello, por tanto, no solo sirve para calvicie, si no para tupir el cabello y sanar el cuero cabelludo.</p>
+    </div>
+
+
+    <!-- //add-products -->
+    <!-- coming soon -->
+    <div class="soon">
+        <div class="container">
+            <h3>Mega Descuentos de la Semana</h3>
+            <h3>DIA DE LA MADRE</h3>
+            <h4>Muy Pronto No Te Lo Pierdas</h4>
+            <div id="countdown1" class="ClassyCountdownDemo"></div>
+        </div>
+    </div>
+    <div align="center">
+        <h2>Estamos ubicados en</h2>
+        </br>
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.80385910368!2d-84.05716199876883!3d9.95027120680391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e4633b27897f%3A0x5ea580648a8153c8!2sCl%C3%ADnica%20Esbelt%20-%20Centro%20Integral%20de%20Est%C3%A9tica!5e0!3m2!1ses-419!2scr!4v1598587886115!5m2!1ses-419!2scr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <!-- //coming soon -->
+    <!-- deals -->
+    <!-- //deals -->
+    <!-- footer-top -->
+    <!-- //footer-top -->
+    <!-- subscribe -->
+    <div class="subscribe">
+        <div class="container">
+            <div class="col-md-6 social-icons w3-agile-icons">
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!-- //subscribe -->
+    <!-- footer -->
+    <div class="footer">
+        @*<div class="container">*@
+        <div class="footer-info w3-agileits-info">
+            <div class="col-md-4 address-left agileinfo" align="center">
+                <div class="footer-logo header-logo">
+                    <h2><a href="index.html"><span>D</span>erma <i>Pharmacy</i></a></h2>
+
+                </div>
+                <ul>
+                    <li><i class="fa fa-map-marker"></i>San José, Guadalupe</li>
+                    <li><i class="fa fa-mobile"></i> 88564125 </li>
+                    <li><i class="fa fa-phone"></i> 22487545 </li>
+                    <li><i class="fa fa-envelope-o"></i> <a href="mailto:example@mail.com"> derma@gmail.com</a></li>
+                </ul>
+            </div>
+            @*<div class="col-md-8 address-right">
+                    <div class="col-md-4 footer-grids">
+
+                    </div>
+                    <div class="col-md-4 footer-grids">
+
+                    </div>
+                    <div class="col-md-4 footer-grids">
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>*@
+            @*<div class="clearfix"></div>*@
+        </div>
+    </div>
+
+    <!-- //footer -->
+    <div class="copy-right">
+        <div class="container">
+
+        </div>
+    </div>
+
+    <!-- cart-js -->
+    <script src=@Url.Content("/Content/js/minicart.js")></script>
+    <script>
+        w3ls.render();
+
+        w3ls.cart.on('w3sb_checkout', function (evt) {
+            var items, len, i;
+
+            if (this.subtotal() > 0) {
+                items = this.items();
+
+                for (i = 0, len = items.length; i < len; i++) {
+                    items[i].set('shipping', 0);
+                    items[i].set('shipping2', 0);
+                }
+            }
+        });
+    </script>
+    <!-- //cart-js -->
+    <!-- countdown.js -->
+    <script src=@Url.Content("/Content/js/jquery.knob.js")></script>
+    <script src=@Url.Content("/Content/js/jquery.throttle.js")></script>
+    <script src=@Url.Content("/Content/js/jquery.classycountdown.js")></script>
+    <script>
+        $(document).ready(function () {
+            $('#countdown1').ClassyCountdown({
+                end: '1388268325',
+                now: '1387999995',
+                labels: true,
+                style: {
+                    element: "",
+                    textResponsive: .5,
+                    days: {
+                        gauge: {
+                            thickness: .10,
+                            bgColor: "rgba(0,0,0,0)",
+                            fgColor: "#1abc9c",
+                            lineCap: 'round'
+                        },
+                        textCSS: 'font-weight:300; color:#fff;'
+                    },
+                    hours: {
+                        gauge: {
+                            thickness: .10,
+                            bgColor: "rgba(0,0,0,0)",
+                            fgColor: "#05BEF6",
+                            lineCap: 'round'
+                        },
+                        textCSS: ' font-weight:300; color:#fff;'
+                    },
+                    minutes: {
+                        gauge: {
+                            thickness: .10,
+                            bgColor: "rgba(0,0,0,0)",
+                            fgColor: "#8e44ad",
+                            lineCap: 'round'
+                        },
+                        textCSS: ' font-weight:300; color:#fff;'
+                    },
+                    seconds: {
+                        gauge: {
+                            thickness: .10,
+                            bgColor: "rgba(0,0,0,0)",
+                            fgColor: "#f39c12",
+                            lineCap: 'round'
+                        },
+                        textCSS: ' font-weight:300; color:#fff;'
+                    }
+
+                },
+                onEndCallback: function () {
+                    console.log("Time out!");
+                }
+            });
+        });
+    </script>
+    <!-- //countdown.js -->
+    <!-- menu js aim -->
+    <script src=@Url.Content("/Content/js/jquery.menu-aim.js")></script>
+    <script src=@Url.Content("/Content/js/main.js")></script> <!-- Resource jQuery -->
+
+
+
+
+
+
+</body>
+</html>

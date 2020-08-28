@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Tienda_DERMOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Calificación">
+    <Key>
+      <PropertyRef Name="Id_Calificación" />
+    </Key>
+    <Property Name="Id_Calificación" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Cliente" Type="Int32" Nullable="false" />
+    <Property Name="Id_Producto" Type="Int32" Nullable="false" />
+    <Property Name="Valoración" Type="Decimal" Precision="5" Scale="2" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK_Calificación_Cliente" FromRole="Calificación" ToRole="Cliente" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Calificación_Producto" FromRole="Calificación" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Categoría">
+    <Key>
+      <PropertyRef Name="Id_Categoría" />
+    </Key>
+    <Property Name="Id_Categoría" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CategoriaProducto" Relationship="Self.FK_CategoriaProducto_Categoría" FromRole="Categoría" ToRole="CategoriaProducto" />
+  </EntityType>
+  <EntityType Name="CategoriaProducto">
+    <Key>
+      <PropertyRef Name="Id_CategoriaProducto" />
+    </Key>
+    <Property Name="Id_CategoriaProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Producto" Type="Int32" Nullable="false" />
+    <Property Name="Id_Categoria" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Categoría" Relationship="Self.FK_CategoriaProducto_Categoría" FromRole="CategoriaProducto" ToRole="Categoría" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_CategoriaProducto_Producto" FromRole="CategoriaProducto" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id_Cliente" />
+    </Key>
+    <Property Name="Id_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cédula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Dirección" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Teléfono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Calificación" Relationship="Self.FK_Calificación_Cliente" FromRole="Cliente" ToRole="Calificación" />
+    <NavigationProperty Name="Comentario" Relationship="Self.FK_Comentario_Cliente" FromRole="Cliente" ToRole="Comentario" />
+    <NavigationProperty Name="Factura" Relationship="Self.FK_Factura_Cliente" FromRole="Cliente" ToRole="Factura" />
+  </EntityType>
+  <EntityType Name="Comentario">
+    <Key>
+      <PropertyRef Name="Id_Comentario" />
+    </Key>
+    <Property Name="Id_Comentario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Cliente" Type="Int32" Nullable="false" />
+    <Property Name="Id_Producto" Type="Int32" Nullable="false" />
+    <Property Name="Descripción" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK_Comentario_Cliente" FromRole="Comentario" ToRole="Cliente" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Comentario_Producto" FromRole="Comentario" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="DetalleFactura">
+    <Key>
+      <PropertyRef Name="Id_DetalleFactura" />
+    </Key>
+    <Property Name="Id_DetalleFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Factura" Type="Int32" Nullable="false" />
+    <Property Name="Id_Producto" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Valor_Unitario" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Factura" Relationship="Self.FK_DetalleFactura_Factura" FromRole="DetalleFactura" ToRole="Factura" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_DetalleFactura_Producto" FromRole="DetalleFactura" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="Id_Factura" />
+    </Key>
+    <Property Name="Id_Factura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="Int32" Nullable="false" />
+    <Property Name="Id_Cliente" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="id_FormaPago" Type="Int32" Nullable="false" />
+    <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Valor_Iva" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Valor_Descuento" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Neto" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
+    <NavigationProperty Name="DetalleFactura" Relationship="Self.FK_DetalleFactura_Factura" FromRole="Factura" ToRole="DetalleFactura" />
+    <NavigationProperty Name="FormaPago" Relationship="Self.FK_Factura_FormaPago" FromRole="Factura" ToRole="FormaPago" />
+    <NavigationProperty Name="Facturación" Relationship="Self.FK_Facturación_Factura" FromRole="Factura" ToRole="Facturación" />
+  </EntityType>
+  <EntityType Name="Facturación">
+    <Key>
+      <PropertyRef Name="Id_Facturación" />
+    </Key>
+    <Property Name="Id_Facturación" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Factura" Type="Int32" Nullable="false" />
+    <Property Name="Identificación" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Teléfono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Dirección" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Factura" Relationship="Self.FK_Facturación_Factura" FromRole="Facturación" ToRole="Factura" />
+  </EntityType>
+  <EntityType Name="FormaPago">
+    <Key>
+      <PropertyRef Name="Id_Fomapago" />
+    </Key>
+    <Property Name="Id_Fomapago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripción" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Factura" Relationship="Self.FK_Factura_FormaPago" FromRole="FormaPago" ToRole="Factura" />
+  </EntityType>
+  <EntityType Name="Imagen">
+    <Key>
+      <PropertyRef Name="Id_Imagen" />
+    </Key>
+    <Property Name="Id_Imagen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Producto" Type="Int32" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Exportada" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Imagen_Producto" FromRole="Imagen" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="Id_Producto" />
+    </Key>
+    <Property Name="Id_Producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Stock" Type="Int16" Nullable="false" />
+    <Property Name="Marca" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripción" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Referencia" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Calificación" Relationship="Self.FK_Calificación_Producto" FromRole="Producto" ToRole="Calificación" />
+    <NavigationProperty Name="CategoriaProducto" Relationship="Self.FK_CategoriaProducto_Producto" FromRole="Producto" ToRole="CategoriaProducto" />
+    <NavigationProperty Name="Comentario" Relationship="Self.FK_Comentario_Producto" FromRole="Producto" ToRole="Comentario" />
+    <NavigationProperty Name="DetalleFactura" Relationship="Self.FK_DetalleFactura_Producto" FromRole="Producto" ToRole="DetalleFactura" />
+    <NavigationProperty Name="Imagen" Relationship="Self.FK_Imagen_Producto" FromRole="Producto" ToRole="Imagen" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Calificación_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Calificación" Type="Self.Calificación" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id_Cliente" />
+      </Principal>
+      <Dependent Role="Calificación">
+        <PropertyRef Name="Id_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Calificación_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="Calificación" Type="Self.Calificación" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id_Producto" />
+      </Principal>
+      <Dependent Role="Calificación">
+        <PropertyRef Name="Id_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoriaProducto_Categoría">
+    <End Role="Categoría" Type="Self.Categoría" Multiplicity="1" />
+    <End Role="CategoriaProducto" Type="Self.CategoriaProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoría">
+        <PropertyRef Name="Id_Categoría" />
+      </Principal>
+      <Dependent Role="CategoriaProducto">
+        <PropertyRef Name="Id_Categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoriaProducto_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="CategoriaProducto" Type="Self.CategoriaProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id_Producto" />
+      </Principal>
+      <Dependent Role="CategoriaProducto">
+        <PropertyRef Name="Id_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comentario_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id_Cliente" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="Id_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id_Cliente" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="Id_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comentario_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id_Producto" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="Id_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleFactura_Factura">
+    <End Role="Factura" Type="Self.Factura" Multiplicity="1" />
+    <End Role="DetalleFactura" Type="Self.DetalleFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="Id_Factura" />
+      </Principal>
+      <Dependent Role="DetalleFactura">
+        <PropertyRef Name="Id_Factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleFactura_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="DetalleFactura" Type="Self.DetalleFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id_Producto" />
+      </Principal>
+      <Dependent Role="DetalleFactura">
+        <PropertyRef Name="Id_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_FormaPago">
+    <End Role="FormaPago" Type="Self.FormaPago" Multiplicity="1" />
+    <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FormaPago">
+        <PropertyRef Name="Id_Fomapago" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="id_FormaPago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Facturación_Factura">
+    <End Role="Factura" Type="Self.Factura" Multiplicity="1" />
+    <End Role="Facturación" Type="Self.Facturación" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="Id_Factura" />
+      </Principal>
+      <Dependent Role="Facturación">
+        <PropertyRef Name="Id_Factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Imagen_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="Imagen" Type="Self.Imagen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id_Producto" />
+      </Principal>
+      <Dependent Role="Imagen">
+        <PropertyRef Name="Id_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Tienda_DERMOEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Calificación" EntityType="Self.Calificación" />
+    <EntitySet Name="Categoría" EntityType="Self.Categoría" />
+    <EntitySet Name="CategoriaProducto" EntityType="Self.CategoriaProducto" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+    <EntitySet Name="Comentario" EntityType="Self.Comentario" />
+    <EntitySet Name="DetalleFactura" EntityType="Self.DetalleFactura" />
+    <EntitySet Name="Factura" EntityType="Self.Factura" />
+    <EntitySet Name="Facturación" EntityType="Self.Facturación" />
+    <EntitySet Name="FormaPago" EntityType="Self.FormaPago" />
+    <EntitySet Name="Imagen" EntityType="Self.Imagen" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Calificación_Cliente" Association="Self.FK_Calificación_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Calificación" EntitySet="Calificación" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Calificación_Producto" Association="Self.FK_Calificación_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Calificación" EntitySet="Calificación" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoriaProducto_Categoría" Association="Self.FK_CategoriaProducto_Categoría">
+      <End Role="Categoría" EntitySet="Categoría" />
+      <End Role="CategoriaProducto" EntitySet="CategoriaProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoriaProducto_Producto" Association="Self.FK_CategoriaProducto_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="CategoriaProducto" EntitySet="CategoriaProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comentario_Cliente" Association="Self.FK_Comentario_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_Cliente" Association="Self.FK_Factura_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comentario_Producto" Association="Self.FK_Comentario_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleFactura_Factura" Association="Self.FK_DetalleFactura_Factura">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="DetalleFactura" EntitySet="DetalleFactura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleFactura_Producto" Association="Self.FK_DetalleFactura_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="DetalleFactura" EntitySet="DetalleFactura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_FormaPago" Association="Self.FK_Factura_FormaPago">
+      <End Role="FormaPago" EntitySet="FormaPago" />
+      <End Role="Factura" EntitySet="Factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Facturación_Factura" Association="Self.FK_Facturación_Factura">
+      <End Role="Factura" EntitySet="Factura" />
+      <End Role="Facturación" EntitySet="Facturación" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Imagen_Producto" Association="Self.FK_Imagen_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Imagen" EntitySet="Imagen" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
